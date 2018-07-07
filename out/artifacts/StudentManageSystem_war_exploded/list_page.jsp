@@ -19,11 +19,16 @@
                 location.href = "DeleteServlet?sid=" + sid;
         }
     </script>
+
+    <link href="static/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <form action="SearchStudentServlet" method="post">
-    <table border="0" width="100%">
+    <table class="table table-striped table-condensed">
         <tr>
             <td colspan="8">
                 Search By Name: <input type="text" name="sname"/>
@@ -80,7 +85,7 @@
                 </c:if>
                 <c:forEach begin="1" end="${ pageBean.totalPage }" var="i">
                     <c:if test="${ pageBean.currentPage == i }">
-                        ${i }
+                        ${ i }
                     </c:if>
                     <c:if test="${ pageBean.currentPage != i }">
                         <a href="StudentListPageServlet?currentPage=${ i }">${ i }</a>

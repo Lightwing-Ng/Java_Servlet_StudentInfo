@@ -12,9 +12,29 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Home</title>
+    <link href="static/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h3><a href="StudentListServlet">Show All the Students</a></h3>
-<h3><a href="StudentListPageServlet?currentPage=1">Show the Students in Separate Pages</a></h3>
+<div>
+    <table>
+        <tr>
+            <td rowspan="2"><img src="static/img/search.svg" style="width: 200px"></td>
+            <td>
+                <input type="button" onclick='location.href=("StudentListServlet")'
+                       value="Show All the Students" class="Option HomeTitle"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button"
+                       onclick='location.href=("StudentListPageServlet?currentPage=1")'
+                       value="Show the Students in Separate" class="Option HomeTitle"/>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

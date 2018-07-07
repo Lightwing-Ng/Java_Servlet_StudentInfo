@@ -18,54 +18,65 @@
             location.href = "DeleteServlet?sid=" + sid;
         }
     </script>
+    <link href="static/css/main.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form action="SearchStudentServlet" method="post">
-    <table border="0" width="100%">
-        <tr>
-            <td colspan="8">
-                Search By Name: <input type="text" name="sname"/>
-                &nbsp;
-                Search By Gender: <select name="sgender">
-                <option value="">--Select--
-                <option value="Male">Male
-                <option value="Female">Female
-            </select>
-                &nbsp;&nbsp;&nbsp;
-                <input type="submit" value="Search">
-                &nbsp;&nbsp;&nbsp;
-                <a href="add.jsp">Add</a>
-            </td>
-        </tr>
-
-        <tr align="center">
-            <td>ID</td>
-            <td>Name</td>
-            <td>Gender</td>
-            <td>Phone</td>
-            <td>Birthday</td>
-            <td>Hobby</td>
-            <td>Info</td>
-            <td>Option</td>
-        </tr>
-
-        <c:forEach items="${ list }" var="stu">
+<div>
+    <form action="SearchStudentServlet" method="post">
+        <table border="0" class="table table-striped table-condensed">
             <tr align="center">
-                <td>${ stu.sid }</td>
-                <td>${ stu.sname }</td>
-                <td>${ stu.gender }</td>
-                <td>${ stu.phone }</td>
-                <td>${ stu.birthday }</td>
-                <td>${ stu.hobby }</td>
-                <td>${ stu.info }</td>
+                <td colspan="2">Search By Name:</td>
+                <td><input type="text" name="sname"/></td>
+                <td colspan="2">Search By Gender:</td>
                 <td>
-                    <a href="EditServlet?sid=${ stu.sid }">Edit</a>
-                    <a href="#"
-                       onclick="doDelete(${ stu.sid})">Delete</a>
+                    <select name="sgender">
+                        <option value="">Select
+                        <option value="Male">Male
+                        <option value="Female">Female
+                    </select>
+                </td>
+                <td>
+                    <input type="submit" value="Search" class="Option">
+                </td>
+                <td>
+                    <input type="button" onclick='location.href=("add.jsp")' value="Add Students"
+                           class="Option"/>
                 </td>
             </tr>
-        </c:forEach>
-    </table>
-</form>
+            <tr align="center" style="font-weight: bold">
+                <td>ID</td>
+                <td>Name</td>
+                <td>Gender</td>
+                <td>Phone</td>
+                <td>Birthday</td>
+                <td>Hobby</td>
+                <td>Info</td>
+                <td>Option</td>
+            </tr>
+            <c:forEach items="${ list }" var="stu">
+                <tr align="center">
+                    <td>${ stu.sid }</td>
+                    <td>${ stu.sname }</td>
+                    <td>${ stu.gender }</td>
+                    <td>${ stu.phone }</td>
+                    <td>${ stu.birthday }</td>
+                    <td>${ stu.hobby }</td>
+                    <td>${ stu.info }</td>
+                    <td>
+                        <input type="button"
+                               onclick='location.href=("EditServlet?sid=${ stu.sid }")'
+                               value="Edit" class="Option Edit"/>
+                        &nbsp;
+                        <input type="button" onclick='location.href=("doDelete(${ stu.sid })")'
+                               value="Delete" class="Option Delete"/>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </form>
+</div>
 </body>
 </html>
