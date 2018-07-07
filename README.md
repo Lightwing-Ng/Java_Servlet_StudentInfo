@@ -11,7 +11,7 @@
 
 ​	MVC 模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）。
 
-![icon](/Users/lightwingng/Desktop/img/MVC.png)
+![icon](img/MVC.png)
 
 ### 3 JSP 的开发模式
 
@@ -276,6 +276,12 @@ SELECT * FROM stu LIMIT	5 OFFSET 2
 
 优点： 访问速度快。
 缺点： 数据库量过大，内存溢出。
+
+#### 5.7 效果
+
+![icon](img/HomePage.png)
+
+![StudentList](img/StudentList.png)
 
 
 ​		
